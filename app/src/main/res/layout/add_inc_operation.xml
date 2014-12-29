@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/background_ver"
+    android:orientation="vertical" >
+
+    <fragment android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        class="com.rudenko.android.wallet21.activities.TopLineFragment"
+        android:id="@+id/top_line"
+        android:layout_margin="5dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#116202"
+        android:text="Add inc"
+        android:layout_gravity="center"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="26dp" />
+
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:textColor="#116202"
+            android:text="Summa: "
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <EditText
+            android:id="@+id/incSumOperation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:gravity="right"
+            android:hint="rounded"
+            android:inputType="numberDecimal"
+            android:text="0.00"
+            android:textColor="#116202"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <Spinner
+            android:id="@+id/spinnerTypeOfIncOpertion"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="4"
+            android:prompt="@string/spinnerCur"
+            android:textColor="#116202" >
+        </Spinner>
+
+        <Button
+            android:id="@+id/newTypeInc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="New"
+            android:background="@drawable/round_shape_btn_green"
+            android:textColor="#ffffffff"
+            android:textSize="22dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/nameNoteIncOperation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#116202"
+            android:text="Note: "
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <EditText
+            android:id="@+id/IncNoteText"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:gravity="right"
+            android:hint="add notate..."
+            android:inputType="textMultiLine"
+            android:textColor="#116202" >
+
+            <requestFocus />
+        </EditText>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/incButSaveOperation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:text="Save"
+            android:background="@drawable/round_shape_btn_green"
+            android:textColor="#ffffffff"
+            android:textSize="22dp" />
+
+        <Button
+            android:id="@+id/incButCancelOperation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:text="Cancel"
+            android:background="@drawable/round_shape_btn_green"
+            android:textSize="22dp"
+            android:textColor="#ffffffff" />
+
+    </LinearLayout>
+
+
+</LinearLayout>

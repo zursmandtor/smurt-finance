@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:bootstrapbutton="http://schemas.android.com/apk/res-auto"
+    xmlns:fontawesometext="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/background_ver"
+    android:orientation="vertical" >
+
+    <fragment android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        class="com.rudenko.android.wallet21.activities.TopLineFragment"
+        android:id="@+id/top_line"
+        android:layout_margin="5dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#FF0000"
+        android:text="Add exp"
+        android:layout_gravity="center"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="26dp" />
+
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:textColor="#FF0000"
+            android:text="Summa: "
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <EditText
+            android:id="@+id/expSumOperation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:gravity="right"
+            android:hint="rounded"
+            android:inputType="numberDecimal"
+            android:text="0.00"
+            android:textColor="#FF0000" />
+
+        <Spinner
+            android:id="@+id/curSpinner"
+            android:layout_width="83dp"
+            android:layout_height="wrap_content"
+            android:prompt="@string/spinnerCur" >
+
+        </Spinner>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <Spinner
+            android:id="@+id/spinnerTypeOfExpOpertion"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="4"
+            android:prompt="@string/spinnerCur"
+            android:textColor="#116202" >
+        </Spinner>
+
+        <Button
+            android:id="@+id/newTypeExp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/round_shape_btn_red"
+            android:text="New"
+            android:textColor="#ffffffff"
+            android:textSize="22dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/nameNoteExpOperation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Note: "
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#FF0000" />
+
+        <EditText
+            android:id="@+id/ExpNoteText"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:gravity="right"
+            android:hint="rounded"
+            android:inputType="textMultiLine"
+            android:text="add notate..."
+            android:textColor="#FF0000" >
+
+            <requestFocus />
+        </EditText>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/expButSaveOperation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/round_shape_btn_red"
+            android:text="Save"
+            android:textSize="22dp"
+            android:textColor="#ffffffff" />
+
+
+        <Button
+            android:id="@+id/expButCancelOperation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:text="Cancel"
+            android:background="@drawable/round_shape_btn_red"
+            android:textColor="#ffffffff"
+            android:textSize="22dp" />
+
+    </LinearLayout>
+
+</LinearLayout>

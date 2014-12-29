@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:background="@drawable/background_ver"    >
+
+
+
+    <TableLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:stretchColumns="*" >
+
+        <fragment android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            class="com.rudenko.android.wallet21.activities.TopLineFragment"
+            android:id="@+id/top_line"
+            android:layout_margin="2dp" />
+
+
+        <TableRow
+            android:id="@+id/incAdd"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="2dip"
+            android:layout_marginLeft="20dip"
+            android:padding="3dip"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:background="#ffcfffd6"
+            android:clickable="true">
+
+
+            <TextView
+                android:id="@+id/income"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="3dip"
+                android:layout_weight="4"
+                android:gravity="center"
+                android:text="@string/incomeCur"
+                android:textColor="#116202"
+                android:textSize="26sp"
+                android:layout_gravity="center_vertical"
+                android:theme="@style/Base.TextAppearance.AppCompat.Body2" />
+
+
+            <Button
+                android:id="@+id/butAddInc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_gravity="center_vertical"
+                android:layout_margin="5dp"
+                android:linksClickable="true"
+                android:text="Add"
+                android:background="@drawable/round_shape_btn_green"
+                android:textColor="#ffffffff"
+                android:textSize="22dp" />
+
+            <Button
+                android:id="@+id/butIncShow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_gravity="center_vertical"
+                android:layout_margin="5dp"
+                android:linksClickable="true"
+                android:onClick="addIncClick"
+                android:text="@string/show"
+                android:background="@drawable/round_shape_btn_green"
+                android:textColor="#ffffffff"
+                android:textSize="22dp" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/incTodayRow"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="2dip"
+            android:layout_marginLeft="20dip"
+            android:background="#ffcfffd6"
+            android:padding="3dip"
+            android:textAppearance="?android:attr/textAppearanceMedium" >
+
+            <TextView
+                android:id="@+id/incToday"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="7"
+                android:text="@string/today"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/summIncToday"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="right"
+                android:linksClickable="true"
+                android:text="0,00"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/incWeekRow"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="2dip"
+            android:padding="3dip"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:background="#ffcfffd6">
+
+            <TextView
+                android:id="@+id/incWeek"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="7"
+                android:text="@string/week"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/summIncWeek"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="right"
+                android:linksClickable="true"
+                android:text="0,00"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/incMonthRow"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="2dip"
+            android:padding="3dip"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:background="#ffcfffd6">
+
+            <TextView
+                android:id="@+id/incMonth"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="7"
+                android:text="@string/month"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/summIncMonth"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="right"
+                android:linksClickable="true"
+                android:text="0,00"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/expAdd"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:padding="3dip"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:background="#ffffe9e0"
+            android:layout_marginTop="2dp">
+
+            <TextView
+                android:id="@+id/expense"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="6"
+                android:gravity="center"
+                android:text="@string/expense"
+                android:textColor="#ff7d1f1c"
+                android:textSize="26sp"
+                android:layout_gravity="center_vertical"
+                android:autoText="false"
+                android:theme="@style/Base.TextAppearance.AppCompat.Body2" />
+
+
+            <Button
+                android:id="@+id/butAddExp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_gravity="center_vertical"
+                android:layout_margin="5dp"
+                android:linksClickable="true"
+                android:text="@string/add"
+                android:background="@drawable/round_shape_btn_red"
+                android:textColor="#ffffffff"
+                android:textSize="22dp" />
+
+            <Button
+                android:id="@+id/butShowExp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_gravity="center_vertical"
+                android:layout_margin="5dp"
+                android:linksClickable="true"
+                android:onClick="addIncClick"
+                android:text="@string/show"
+                android:background="@drawable/round_shape_btn_red"
+                android:textColor="#ffffffff"
+                android:textSize="22dp" />
+        </TableRow>
+
+
+
+        <TableRow
+            android:id="@+id/expTodayRow"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="2dip"
+            android:padding="3dip"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:background="#ffffe9e0">
+
+            <TextView
+                android:id="@+id/expToday"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="7"
+                android:text="@string/today"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/summExpToday"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="right"
+                android:text="0,00"
+                android:textStyle="bold" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/expWeekRow"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="2dp"
+            android:padding="3dip"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:background="#ffffe9e0">
+
+            <TextView
+                android:id="@+id/expWeek"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="7"
+                android:text="@string/week"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/summExpWeek"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="right"
+                android:linksClickable="true"
+                android:text="0,00"
+                android:textStyle="bold" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/expMonthRow"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="2dp"
+            android:padding="3dip"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:background="#ffffe9e0">
+
+            <TextView
+                android:id="@+id/expMonth"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="7"
+                android:text="@string/month"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/summExpMonth"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="right"
+                android:text="0,00"
+                android:textStyle="bold" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/balanceRow"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_margin="2dp"
+            android:padding="3dip"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:background="#ffc2d2ff">
+
+            <TextView
+                android:id="@+id/balance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="5"
+                android:gravity="center"
+                android:text="My balans: "
+                android:textColor="#ff0313ff"
+                android:textSize="26sp"
+                android:theme="@style/Base.TextAppearance.AppCompat.Body2" />
+
+
+            <TextView
+                android:id="@+id/summ_balance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_gravity="center_vertical"
+                android:gravity="right"
+                android:text="0,00"
+                android:textStyle="bold" />
+        </TableRow>
+    </TableLayout>
+
+</LinearLayout>
