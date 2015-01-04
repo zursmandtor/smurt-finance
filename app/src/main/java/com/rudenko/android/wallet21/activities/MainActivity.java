@@ -2,7 +2,9 @@ package com.rudenko.android.wallet21.activities;
 
 import android.app.DatePickerDialog;
 import android.app.Dialog;
+import android.content.Context;
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
@@ -17,8 +19,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.rudenko.android.wallet21.R;
-
-import java.util.Calendar;
+import com.rudenko.android.wallet21.time.Date;
 
 
 public class MainActivity extends ActionBarActivity
@@ -31,10 +32,10 @@ public class MainActivity extends ActionBarActivity
     String[] dataForCurSpinner = {"EU", "USD", "myCur"};
 
     TextView tvDate;
-    private int year =2014;
-    private int month = 10;
-    private int day = 15;
-
+    Date curDate = new Date();
+    private int year = curDate.getYear();
+    private int month = curDate.getMonth();
+    private int day = curDate.getDay();
 
     Button buttonAddExp;
     Button buttonAddInc;
@@ -54,10 +55,8 @@ public class MainActivity extends ActionBarActivity
         buttonAddInc.setOnClickListener(this);
 
         tvDate = (TextView) findViewById(R.id.textViewCurDate);
-        Calendar today = Calendar.getInstance();
-        day = today.get(Calendar.DAY_OF_MONTH);
-        year = today.get(Calendar.YEAR);
-        month = today.get(Calendar.MONTH);
+
+        //set current date to the textView
         tvDate.setText(new StringBuilder()
                 // Month is 0 based, just add 1
                 .append(day).append(".").append(month + 1).append(".")
@@ -132,7 +131,7 @@ public class MainActivity extends ActionBarActivity
 
     protected Dialog onCreateDialog(int id) {
         if (id == DIALOG_DATE) {
-            DatePickerDialog tpd = new DatePickerDialog(this, myCallBack, year, month, day);
+            DatePickerDialog tpd = new DatePickerDialog(this, myCallBack, curDate.getYear(), curDate.getMonth(), curDate.getDay());
             return tpd;
         }
         return super.onCreateDialog(id);
@@ -152,6 +151,14 @@ public class MainActivity extends ActionBarActivity
         }
     };
 
+    public void detectOrientation(View v){
+        Context appContext = getApplicationContext();
+        Configuration configuration = getResources().getConfiguration();
+    }
 
+    public void detectRotate(View v){
+        Context appContext = getApplicationContext();
+        int rotate = getWindowManager().getDefaultDisplay().getRotation();
+    }
 
 }
